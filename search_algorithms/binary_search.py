@@ -1,3 +1,14 @@
+"""
+Searches through sorted lists using divide and conquer strategy.
+Starts by examining the middle element. If the middle element is equal to the
+element we are searching for, we are done. Else, if the element we are
+searching for is is greater that  the middle item, we know the lower half
+of the list as well as the middle element can be eliminated from
+consideration. We repear the process for the upper half.
+- Has time complexity of O(log n)
+"""
+
+
 def binary_search(elements, target):
     """
     Recursive binary search

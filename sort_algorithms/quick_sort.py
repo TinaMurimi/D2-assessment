@@ -1,3 +1,9 @@
+"""
+- Selects a "pivot value" which assists with splitting the list. Next, perform a parttition operation and reorder the list so that all the elements which are less than the pivot value are on the left side of the pivot value and all the greater elements are on the the right side of the pivot value. Equal values go either way.
+Performance: Worst Case O(n*n), Best Case O(n log n)
+"""
+
+
 def quickSort(elements):
     quickSortHelper(elements, 0, len(elements)-1)
 

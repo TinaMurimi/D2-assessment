@@ -39,3 +39,9 @@ def quadratic_probing(elements, hash_table):
     """
     # See implemetation in hashing_midsquare()
     pass
+
+"""
+Other collision resolution techniques include:
+Chaining:  Allow each slot to hold a reference to a collection (or chain) of items
+Double Hashing: Choose a second hash function to determine the location of the next slot.
+"""

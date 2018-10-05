@@ -1,3 +1,10 @@
+"""
+- Works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and swapping them if they are in the wrong order. If we have a total of n elements, we need to repeat the process (n-1) times. 
+- Can be modified to stop early if it finds that the list has become sorted. Therefore, instead of n(n-1) comparisons, we have n(n-1)/2 comparisons.
+- Not practical when n is large.
+Performance: Worst Case O(n2), Best Case O(n)
+"""
+
 def bubble_sort(elements):
     l = len(elements)-1
 

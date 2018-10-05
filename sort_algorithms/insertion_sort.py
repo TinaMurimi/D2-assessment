@@ -1,3 +1,10 @@
+"""
+- A comparison sort algorithm that builds a sorted list one entry at a time.
+- Maintains a sorted sublist in the lower positions of the list. Each new list is inserted back into the previous list such that the sorted sublist is one item larger.
+Performance: Worst Case O(n2), Best Case O(n)
+"""
+
+
 def insertion_sort(elements):
     iterations = 0
 

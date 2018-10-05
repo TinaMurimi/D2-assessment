@@ -1,3 +1,9 @@
+"""
+- Follows the rule of divide and conquer to sort a given set of elements recursively, hence consuming less time.
+Performance: Worst Case O(n log n), Best Case O(n log n)
+"""
+
+
 def merge_sort(elements):
     iterations = 0
 

@@ -1,3 +1,10 @@
+"""
+- An in-pace comparison sort that improves on the bubble sort by making only one exchange for every pass through the list. It selects the next smallest element and swaps it into the right place
+- Not practical when n is large.
+Performance: Worst Case O(n2), Best Case O(n2)
+"""
+
+
 def selection_sort(elements):
     iterations = 0
 
