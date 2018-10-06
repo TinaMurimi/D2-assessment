@@ -1,0 +1,23 @@
+SHOPPING CART
+Functionality
+Create, Read, Update, Delete
+
+User features
+1. A user should be able to create an account
+2. A user should be able to log in and log out from account
+3. A user should be able to delete their account
+4. A user should be able to edit their account details
+
+Shopping Cart
+1. A user should be able to add items to their shopping cart
+2. A user should be able to view items in their shopping cart
+3. A user should be able to edit the quantity of items ordered in their shopping cart
+4. A user should be able to delete one or all items from their shopping cart
+5. A user should be able to checkout items from their shopping cart
+    - This reduces the amount of items available for sale in the catalogue
+6. A user should be able to see all the items they have ever shopped
+
+Database
+1. Catalogue: List of all items available for sale
+2. Shoppers: List of all user accounts
+3. Shopping cart: List of items ordered

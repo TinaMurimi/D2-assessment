@@ -1,0 +1,46 @@
+-- Create a user
+-- CREATE USER cart WITH ENCRYPTED PASSWORD 'cart123';
+
+CREATE USER cart WITH ENCRYPTED PASSWORD 'cart123';
+-- ALTER USER cart WITH PASSWORD 'cart123';
+
+-- Create a new Database
+CREATE DATABASE shopping_cart WITH OWNER=cart;
+
+GRANT ALL PRIVILEGES ON DATABASE shopping_cart TO cart;
+
+DROP TABLE IF EXISTS products;
+CREATE TABLE IF NOT EXISTS products (
+    code SERIAL CONSTRAINT product_code PRIMARY KEY,
+    product_name VARCHAR(20) NOT NULL,
+    description VARCHAR(100) NOT NULL,
+    unit_price   INTEGER  NOT NULL,
+    unitsInStock INTEGER DEFAULT 0
+);
+
+DROP TABLE IF EXISTS Shoppers;
+CREATE TABLE IF NOT EXISTS Shoppers (
+    uid SERIAL CONSTRAINT shopper_id PRIMARY KEY,
+    username VARCHAR(40) NOT NULL,
+    email VARCHAR(40) NOT NULL,
+    password VARCHAR(40) NOT NULL
+);
+
+DROP TABLE IF EXISTS orders;
+CREATE TABLE IF NOT EXISTS orders (
+    oid SERIAL CONSTRAINT order_id PRIMARY KEY,
+    cid INTEGER,
+    order_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+DROP TABLE IF EXISTS order_items;
+CREATE TABLE IF NOT EXISTS order_items (
+    id SERIAL CONSTRAINT order_items_id PRIMARY KEY,
+    oid INTEGER,
+    cid INTEGER,
+    pid INTEGER,
+    qty INTEGER NOT NULL DEFAULT 1
+);
+
+
+ALTER TABLE shoppers ALTER COLUMN password TYPE VARCHAR(255);

@@ -1,0 +1,10 @@
+What is needed to build the app?
+Flask is a Python web developpement framework to build web applications. It comes with jinja2, a templating language for Python, and Werkzeug, a WSGI utility module.
+
+PostgreSQL is an open source relational database system which, as its name suggests, uses SQL.
+
+SQLAlchemy is an Object Relational Mapper (ORM), it is a layer between object oriented Python and the database schema of Postgres.
+
+Alembic is a useful module to manage migrations with SQLAlchemy in Python. Migrations occur when one wants to change the database schema linked to the application, like adding a table or removing a column from a table. It can also be used to write or delete data in a table. Alembic enables developers not to manually upgrade their database and to easily revert any change: migrations go up and down. It is also useful to recreate databases from scratch, by following the migration flow.
+
+Even if you don’t use them directly, you will have to install libpq-dev, to communicate with Postgres backend, and psycopg2, a libpq wrapper in Python.
