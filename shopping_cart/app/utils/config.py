@@ -8,10 +8,10 @@ ROOT_DIR = os.path.abspath(os.path.dirname(APP_DIR))
 DEBUG = config('DEBUG', default=False)
 SECRET_KEY = config('SECRET_KEY', default=False)
 
-POSTGRES = {
-    'dbuser': config('DB_USER'),
-    'dbpass': config('DB_PASWWORD'),
-    'dbname': config('DB_NAME'),
-    'dbhost': 'localhost',
-    'dbport': '5432',
+DB_SETTINGS = {
+    'database': config('DB_NAME'),
+    'user': config('DB_USER'),
+    'password': config('DB_PASWWORD'),
+    'host': config('DB_HOST', 'localhost'),
+    'port': config('DB_HOST', 5432),
 }

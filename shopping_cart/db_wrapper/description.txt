@@ -1,0 +1,11 @@
+Write a small MySQL database wrapper module that makes use of *abstraction (ABC)*. 
+
+1. The wrapper class should have the 4 basic db operations (Create, Read, Update and Delete). 
+2. You should be able to inject a mysql connection instance. 
+    I would recommend that you use python's namedtuple for this. Keys in this case would be the table columns and values would be the actual data. The wrappers should be able to update, select and insert both specific columns and/or all columns where applicable. 
+3. Then write a simple flask API that uses this wrapper to CRUD to your database on your shopping cart app as a replacement of SQLAlchemy
+
+My expectations for this is that you are competent with the SOLID principles, object oriented programming (OOP), algorithms (complexities: (time, space), search and sort algorithms), relational databases. The excercise above will generally test for these expectations
+You can start working on this, then we can pair up tomorrow during the assessment to complete it
+
+Write tests

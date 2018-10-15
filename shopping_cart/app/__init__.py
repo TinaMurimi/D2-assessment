@@ -13,8 +13,8 @@ app = flask.Flask(__name__, instance_relative_config=True)
 app.config["DEBUG"] = config.DEBUG
 app.config['SECRET_KEY'] = config.SECRET_KEY
 
-database_uri = 'postgresql+psycopg2://{dbuser}:{dbpass}@{dbhost}:{dbport}/{dbname}'.format(
-    **config.POSTGRES)
+database_uri = 'postgresql+psycopg2://{user}:{password}@{host}:/{database}'.format(
+    **config.DB_SETTINGS)
 
 print(f"\ndatabase_uri: {database_uri}\n")
 
