@@ -2,6 +2,13 @@
 .idea/
 .vscode/
 *.DS_Store
+.pytest_cache/
+*/.pytest_cache
+*.pytest_cache/
+*.pytest_cache/*
+
+
+*.logs
 
 #UNIX stuff
 *~
