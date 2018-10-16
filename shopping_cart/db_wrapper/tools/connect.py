@@ -35,17 +35,3 @@ def connect(**credentials):
         raise
 
 
-def execute_sql(conn, sql):
-    # try:
-    cursor = conn.cursor()
-
-    # Execute SQL
-    cursor.execute(sql)
-
-    return cursor
-
-    # except:
-    #     conn.rollback()
-
-    # finally:
-    #     conn.commit()
