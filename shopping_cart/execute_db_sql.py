@@ -21,7 +21,7 @@ dml = DMLQuery(conn)
 # Params = collections.namedtuple('Params', ["email", "username", "password"])
 # sql = dml.create(
 #     table="shoppers",
-#     params = Params("another@gmail.com", "another", "anotherpassword")
+#     params = Params("brian@gmail.com", "brian", "brianpwd")
 # )
 
 
@@ -31,10 +31,9 @@ dml = DMLQuery(conn)
 #     'Filters', ["uid", "email", "username"])
 # sql = dml.update(
 #     table="shoppers",
-#     params=Params("t@g.com", "tina"),
-#     filters=Filters(None, "tm@andela.com", "tinaxx")
+#     params=Params("briano@gmail.com", "tina"),
+#     filters=Filters(None, "brian@gmail.com", None)
 # )
-# print(sql)
 
 
 Params = collections.namedtuple('Params', ["email", "username"])
@@ -43,6 +42,14 @@ Filters = collections.namedtuple(
 shoppers = dml.read(
     table="shoppers",
     columns=["uid", "username", "email"],
-    filters=Filters(uid=None, username=None, email="someone@gmail.com")
+    filters=Filters(uid=None, username="tina", email=None)
 )
 print(shoppers)
+
+
+Filters = collections.namedtuple(
+    'Filters', "uid, email, username")
+dml.delete(
+    table="shoppers",
+    filters=Filters(uid=None, username="tina", email=None)
+)

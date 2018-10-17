@@ -33,5 +33,3 @@ def connect(**credentials):
     # Raises psycopg2.ProgrammingError, psycopg2.OperationalError
     except Exception:
         raise
-
-

@@ -132,8 +132,23 @@ class DMLQuery(DBWrapper):
         except (Exception, psycopg2.DatabaseError) as error:
             raise
 
-    def delete(self, table, params):
+    def delete(self, table, filters):
         """
         Delete record
         """
-        pass
+        _filters = ParseParameters.parse_filters(filters)
+
+        sql = f"DELETE FROM {table} {_filters};"
+        try:
+            # Execute sql
+            self.logger.info(f"Deleting from {table} table")
+            cursor = self.execute_sql(sql)
+
+            # Get the number of rows
+            self.logger.info(f"Deleted {cursor.rowcount}row(s)")
+
+            # Close communication with the PostgreSQL database
+            cursor.close()
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            raise
